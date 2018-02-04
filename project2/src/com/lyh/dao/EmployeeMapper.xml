@@ -20,14 +20,18 @@
     </update>
     <select id="findEmployee" resultType="Employee">
         select * from EMPLOYEE
-        where E_REALNAME=#{e_realname}
+        where E_NAME=#{e_name}
         and e_password=#{e_password}
     </select>
     <select id="employeelist" resultType="Employee">
         select * from EMPLOYEE
     </select>
-    <select id="findEmployeeById" resultType="com.lyh.model.Employee">
+    <select id="findEmployeeById" resultType="Employee">
         select * from EMPLOYEE
         where E_ID=#{e_id}
+    </select>
+    <select id="findEmployeeByJname" resultType="Employee">
+        select * from EMPLOYEE
+        where E_JNAME=#{e_jname}
     </select>
 </mapper>

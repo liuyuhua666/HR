@@ -138,7 +138,7 @@ public class InterviewController {
             Guest guest1= guestService.findGuestById(guest);
             resume.setR_gid(interview1.getI_gid());
             Resume resume1=resumeService.findResumeByGid(resume);
-            recruitment.setRm_id(interview.getI_rmid());
+            recruitment.setRm_id(interview1.getI_rmid());
             Recruitment recruitment1=recruitmentService.findRecruitmentById(recruitment);
             employee.setE_name(guest1.getG_name());
             employee.setE_password(guest1.getG_password());
@@ -152,6 +152,7 @@ public class InterviewController {
             employee.setE_dname(recruitment1.getRm_dname());
             employee.setE_jname(recruitment1.getRm_jname());
             employee.setE_basicwage(recruitment1.getRm_money());
+            employee.setE_workstatus(0);
             if(employeeService.addEmployee(employee)){
                 return "manager";
             }

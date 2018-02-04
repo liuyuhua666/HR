@@ -1,7 +1,9 @@
 package com.lyh.controller;
 
 import com.lyh.model.Employee;
+import com.lyh.model.Guest;
 import com.lyh.service.EmployeeService;
+import org.springframework.aop.scope.ScopedProxyUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -34,10 +36,20 @@ public class EmployeeController {
         employee1.setE_hiretime(employee.getE_hiretime());
         employee1.setE_workstarttime(employee.getE_workstarttime());
         employee1.setE_workendtime(employee.getE_workendtime());
-        employee1.setE_workstatus(1);
-        if(employeeService.updateEmployee(employee)){
+        employee1.setE_workstatus(2);
+        if(employeeService.updateEmployee(employee1)){
             return "addEmployees";
         }
         return "addEmployee";
+    }
+
+    @RequestMapping("/toPersonalInfo")
+    public String toPersonalInfo(HttpSession session)throws Exception{
+        return "personalInfo";
+    }
+
+    @RequestMapping("/returnEmployeeMain")
+    public String returnEmployeeMain()throws Exception{
+        return "employeeMain";
     }
 }

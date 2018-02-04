@@ -24,7 +24,6 @@
         <input type="radio" name="i_result" value="未通过"/>未通过<br>
         <input type="hidden" name="i_id" value="${sessionScope.interview.i_id}"/>
         <input type="submit" value="提交"/>
-    </form>
+</form>
 </div>
 </body>
-</html>

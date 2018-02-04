@@ -19,7 +19,7 @@
 <body>
 <c:forEach items="${sessionScope.interviewList}" var="interview">
     <c:forEach items="${sessionScope.guestList}" var="guest">
-        <c:if test="${interview.i_gstatus==2&&interview.i_gid==guest.g_id}">
+        <c:if test="${interview.i_gstatus==2&&interview.i_gid==guest.g_id&&interview.i_result==null}">
             <a href=resultInterview?i_id=${interview.i_id}>${guest.g_name}</a><br>
         </c:if>
     </c:forEach>

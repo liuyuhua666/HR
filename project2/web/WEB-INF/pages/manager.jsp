@@ -33,5 +33,6 @@
 <a href="allInterviews">求职面试申请</a>
 <a href="resultInterviews">面试结果</a>
 <a href="toAddEmployees">员工入职</a>
+<a href="toDepartment">部门职位</a>
 </body>
 </html>

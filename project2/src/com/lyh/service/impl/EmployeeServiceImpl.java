@@ -24,6 +24,11 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     @Override
+    public List<Employee> findEmployeeByJname(Employee employee) {
+        return employeeMapper.findEmployeeByJname(employee);
+    }
+
+    @Override
     public List<Employee> employeelist() {
         return employeeMapper.employeelist();
     }

@@ -19,7 +19,7 @@ public class Employee implements Serializable{
     private int e_basicwage;//基本工资
     private String e_workstarttime;//上班时间
     private String e_workendtime;//下班时间
-    private int e_workstatus;//状态（0离职时只可查看 1试用 2在职）
+    private int e_workstatus;//状态（0初始 1离职时只可查看 2试用 3在职）
 
     public Employee() {
     }

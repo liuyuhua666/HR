@@ -1,7 +1,9 @@
 package com.lyh.controller;
 
+import com.lyh.model.Employee;
 import com.lyh.model.Guest;
 import com.lyh.model.Recruitment;
+import com.lyh.service.EmployeeService;
 import com.lyh.service.GuestService;
 import com.lyh.service.RecruitmentService;
 import org.springframework.stereotype.Controller;
@@ -19,8 +21,18 @@ public class GuestController {
     @Resource
     private RecruitmentService recruitmentService;
 
+    @Resource
+    private EmployeeService employeeService;
+
     @RequestMapping("/toLogin")
-    public String toLogin(Guest guest, HttpSession session) throws Exception{
+    public String toLogin(Guest guest, Employee employee,HttpSession session) throws Exception{
+        employee.setE_name(guest.getG_name());
+        employee.setE_password(guest.getG_password());
+        Employee employee1=employeeService.findEmployee(employee);
+        if(null!=employee1){
+            session.setAttribute("employee",employee1);
+            return "employeeMain";
+        }
         List<Guest> guestList=guestService.findGuests();
         if(guestList.size()>0){
             for(Guest guest1:guestList){

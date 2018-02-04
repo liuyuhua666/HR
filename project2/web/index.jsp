@@ -21,10 +21,10 @@
     <form action="toLogin" method="post">
         账号：<input name="g_name"><br>
         密码：<input name="g_password"><br>
-        <input type="submit" value="游客登录"><br>
+        <input type="submit" value="登录"><br>
     </form>
 </fieldset>
-<a href="toRegister">游客注册</a>
+<a href="toRegister">注册</a>
 <a href="managerRegister">管理员登录</a>
 </body>
 </html>

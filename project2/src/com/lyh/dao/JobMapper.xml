@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lyh.dao.JobMapper">
+    <insert id="addJob">
+        insert into JOB values
+        (JOB_SEQ.nextval,#{j_name},#{j_did},#{j_createtime})
+    </insert>
+    <update id="updateJob">
+
+    </update>
+    <delete id="deleteJob">
+        delete from JOB
+        where
+    </delete>
+
+    <select id="allJobByDid" resultType="com.lyh.model.Job">
+        select * from JOB
+        where J_DID=#{j_did}
+    </select>
+</mapper>
